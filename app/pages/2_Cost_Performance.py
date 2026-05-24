@@ -6,6 +6,10 @@ Executive question: Where is the money actually going wrong?
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
