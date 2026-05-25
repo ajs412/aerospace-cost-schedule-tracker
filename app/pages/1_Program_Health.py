@@ -69,9 +69,12 @@ fig.add_trace(go.Scatter(
     line=dict(color=COLORS["bad"], width=3),
 ))
 pathology_start = str(trends["period"].iloc[PATHOLOGY_START_MONTH - 1])
-fig.add_vline(
-    x=pathology_start, line_dash="dot", line_color=COLORS["warn"],
-    annotation_text="Pathologies emerge", annotation_position="top",
+fig.add_vline(x=pathology_start, line_dash="dot", line_color=COLORS["warn"])
+fig.add_annotation(
+    x=pathology_start, y=1, yref="paper",
+    text="Pathologies emerge", showarrow=False,
+    xanchor="left", yanchor="bottom",
+    font=dict(color=COLORS["warn"]),
 )
 fig.update_yaxes(tickformat="$,.0s")
 apply_layout(fig, height=450)
