@@ -68,7 +68,7 @@ fig.add_trace(go.Scatter(
     name="Actual Cost", mode="lines",
     line=dict(color=COLORS["bad"], width=3),
 ))
-pathology_start = trends["period"].iloc[PATHOLOGY_START_MONTH - 1]
+pathology_start = str(trends["period"].iloc[PATHOLOGY_START_MONTH - 1])
 fig.add_vline(
     x=pathology_start, line_dash="dot", line_color=COLORS["warn"],
     annotation_text="Pathologies emerge", annotation_position="top",
